@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 ''' R0 Gérer l'occupation des bureaux dans un labo '''
 '''
 Exemple:
@@ -40,24 +42,27 @@ Arrivé de marc dans le bureau F305
 
 # Module scenario mixte ihm / test      utilise module labo
 
+def labo_vide():
+    labo = {}
+    return labo
 
-''' R0 Enregistrer l'arrivée d'une nouvelle personne '''
-# R1 Comment enregistrer l'arrivée d'une nouvelle personne
-# Associer la personne au bureau qu elle occupe
-# bureau[num_bureau].append(nom_personne)
+def enregistrer_arrive(labo, nom, bureau):
+    pass
 
-# Données manipulées: nom_personne, bureaux, liste_personne
+def enregistrer_depart(labo, nom):
+    pass
 
+def changer_bureau(labo, nom, bureau):
+    pass
 
-''' R0 Enregistrer le départ d'une personne '''
-# R1 Comment enregistrer le départ d'une personne
-
-# Données manipulées: nom_personne, bureaux, liste_personne
-
-''' R0 Modifier le bureau occupé par une personne '''
-# R1 Comment modifier le bureau occupé par une personne
-
-# Données manipulées: nom_personne, bureaux, liste_personne
+class LaboException(Exception):
+    """ Généralise les exceptions du laboratoire."""
+    pass
 
 
+class AbsentException(LaboException):
+    pass
 
+
+class PresentException(LaboException):
+    pass
