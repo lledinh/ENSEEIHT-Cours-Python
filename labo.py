@@ -53,15 +53,17 @@ def enregistrer_arrive(labo, nom, bureau):
     labo[nom] = bureau
 
 def enregistrer_depart(labo, nom):
-    pass
+    if nom not in labo:
+        raise AbsentException
+
+    del labo[nom]
 
 def changer_bureau(labo, nom, bureau):
-    pass
+    labo[nom] = bureau
 
 class LaboException(Exception):
     """ Généralise les exceptions du laboratoire."""
     pass
-
 
 class AbsentException(LaboException):
     pass
