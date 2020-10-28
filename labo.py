@@ -47,7 +47,10 @@ def labo_vide():
     return labo
 
 def enregistrer_arrive(labo, nom, bureau):
-    pass
+    if nom in labo:
+        raise PresentException
+
+    labo[nom] = bureau
 
 def enregistrer_depart(labo, nom):
     pass

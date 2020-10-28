@@ -11,7 +11,8 @@ def test_labo_vide():
 
 def test_enregistrer_arrive():
     labo = labo_vide()
-    pass
+    enregistrer_arrive(labo, "Xavier", "F305")
+    assert labo["Xavier"] == "F305"
 
 def test_enregistrer_depart():
     labo = labo_vide()
