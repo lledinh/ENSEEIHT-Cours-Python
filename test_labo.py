@@ -45,14 +45,12 @@ def test_enregistrer_depart_fail():
     except AbsentException as e:
         assert True
         
-    pass
-
 def test_changer_bureau():
     labo = labo_vide()
-    pass
+    enregistrer_arrive(labo, "Xavier", "F305")
+    assert labo["Xavier"] == "F305"
 
-def test_changer_bureau_fail():
-    labo = labo_vide()
-    pass
+    changer_bureau(labo, "Xavier", "F308")
+    assert labo["Xavier"] == "F308"
 
 print("ok")
